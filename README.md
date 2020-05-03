@@ -7,7 +7,7 @@ This bot will help you automate giving likes and dislikes. The bot will also lik
 ## Installation
 1. Install Firefox. Link: https://www.mozilla.org
 2. Install Python environment. Link: https://www.python.org
-3. Add Python path to your environment variables. 
+3. Add Python path to your system environment variables. 
 4. Install Selenium for Python. Link: https://selenium-python.readthedocs.io/installation.html
 ```
 pip install selenium
@@ -42,6 +42,7 @@ In your `config.py` file have to change following things:
 `min_wait_time_between_action_in_sec` for minimal time delay. Default `max_wait_time_between_action_in_sec` is 45 and `min_wait_time_between_action_in_sec` is 10.
 6. Only if you log in through Google. This option `amount_of_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
 
-
+## Usage
+Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` 
 
 **Created for scientific purposes only. This is not intended to harm anyone. I am not responsible for any damages resulting from the use of this program.**
