@@ -1,4 +1,4 @@
-# Tinder-Bot
+# Tinder-Bot 2020
 Tinder Bot: Automate your likes and dislikes. Increase Match level.
 
 ## Description
@@ -33,7 +33,7 @@ In your `config.py` file have to change following things:
 },
 #...
 ```
-3. To send message after match set your `match_message`. If `match_message` is empty it won't send message.
+3. To send message after match set your `match_message`. If `match_message` is empty it won't send message. Not implemented yet.
 4. Set your chance to like in percent. 
 - If `chance_to_like` is 0 It will give only dislikes.
 - If `chance_to_like` is 100 It will give only likes.
@@ -41,6 +41,8 @@ In your `config.py` file have to change following things:
 5. To set wait time between give next like or dislike you have to change `max_wait_time_between_action_in_sec` for maximal time delay and 
 `min_wait_time_between_action_in_sec` for minimal time delay. Default `max_wait_time_between_action_in_sec` is 45 and `min_wait_time_between_action_in_sec` is 10.
 6. Only if you log in through Google. This option `amount_of_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
+7. If you want to save Instagram nick from description set `allow_to_save_ig` to True. Default is True.
+8. Choose path to your file with instagram nicknames so change `ig_file_path`. Default is 'instagram.txt'.
 
 ## Usage
 Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` 
