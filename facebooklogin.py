@@ -4,6 +4,7 @@
 
 from time import sleep
 from config import Config
+from selenium.common.exceptions import NoSuchElementException
 
 class FacebookLogin:
     def __init__(self, driver):
@@ -21,10 +22,10 @@ class FacebookLogin:
         driver.find_element_by_xpath('//*[@id="u_0_b"]').submit()
         sleep(6)
         try:
-            element = driver.find_element_by_partial_link_text('Log out')
-            self.__isLogged = False
-        except:
+            element = driver.find_element_by_css_selector('input[type="search"]')
             self.__isLogged = True
+        except NoSuchElementException:
+            self.__isLogged = False
 
     def isLogged(self):
         return self.__isLogged

@@ -35,8 +35,6 @@ class TinderLogin:
             self.__isLogged = 'tinder.com/app/recs' in driver.current_url
             if self.__isLogged:
                 self.__closePopups()
-                driver.get('https://tinder.com/app/recs')
-                sleep(2)
 
     def __logInViaGoogle(self):
         driver = self.driver
@@ -78,8 +76,14 @@ class TinderLogin:
         sleep(2)
         driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[3]/button[1]').click()
         sleep(2)
-        driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/a').click()
-        sleep(1)
+        try:
+            element = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/a')
+            element.click()
+            driver.get('https://tinder.com/app/recs')
+            sleep(2)
+        except NoSuchElementException:
+            pass
+       
 
     def isLogged(self):
         return self.__isLogged
