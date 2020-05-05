@@ -7,24 +7,26 @@ import sys
 from time import sleep
 from config import Config
 from selenium.common.exceptions import NoSuchElementException
+from instagramfinder import InstagramFinder
 
-class TinderBot:
+class TinderBot(InstagramFinder):
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.__totalLikes = 0
         self.__totalDislikes = 0
-        self.__totalMatches = 0
 
-    def perform(self):
+    def perform(self, wait=True):
         if 'app/recs' in self.driver.current_url:
-            self.__doMatch()
             self.__doOutOfLikesPopup()
+            self.__noPeople()
             chanceToLike = random.randrange(1, 100)
             if chanceToLike <= Config['chance_to_like']:
                 self.like()
             else:
                 self.dislike()
-            sleep(self.__getWaitTimeInSec())
+            if wait:
+                sleep(self.__getWaitTimeInSec())
 
     def __doOutOfLikesPopup(self):
         driver = self.driver
@@ -35,21 +37,14 @@ class TinderBot:
         except NoSuchElementException:
             pass
 
-    def __doMatch(self):
-        try:        
-            mess = Config['match_message']
-            if len(mess) == 0:
-                pass
-            else:
-                pass
-        except NoSuchElementException:
-            pass
-
-    def __closeMatch(self):
-        pass
-
-    def __sendMessage(self):
-        pass
+    def __noPeople(self):
+        while True:
+            try:
+                element = self.driver.find_element_by_css_selector('.beacon__circle')
+                sleep(2)
+                print('no_people')
+            except NoSuchElementException:
+                break
 
     def like(self):
         self.__totalLikes += 1
@@ -61,10 +56,8 @@ class TinderBot:
 
     def __str__(self):
         total = self.getTotalActions()
-        return f'Total actions: {total}\nTotal likes: {self.__totalLikes}\nTotal disLikes: {self.__totalDislikes}\n Total matches: {self.__totalMatches}'
-
-    def show(self):
-        print(self)
+        insta = super().__str__()
+        return f'=== Tinder results ===\n* Total actions: {total}\n* Total likes: {self.__totalLikes}\n* Total disLikes: {self.__totalDislikes}{insta}'
 
     def __getWaitTimeInSec(self):
         maxTime = Config['max_wait_time_between_action_in_sec']
@@ -73,9 +66,6 @@ class TinderBot:
 
     def getTotalActions(self):
         return self.__totalLikes + self.__totalDislikes
-
-    def getTotalMatches(self):
-        return self.__totalMatches
     
     def getTotalLikes(self):
         return self.__totalLikes

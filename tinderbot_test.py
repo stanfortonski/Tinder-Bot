@@ -3,6 +3,7 @@
 # Tinder Bot Test
 
 import unittest
+from time import sleep
 from tinderlogin import TinderLogin
 from tinderbot import TinderBot
 from driver import getDriver
@@ -30,12 +31,12 @@ class TestTinderBot(unittest.TestCase):
         self.assertEqual(self.bot.getTotalDislikes(), 1)
 
     def testPerform(self):
-        self.bot.perform()
-        self.bot.perform()
-        self.bot.perform()
-        self.bot.perform()
-        self.bot.perform()
-        self.assertEqual(self.bot.getTotalActions(), 5)    
+        self.bot.perform(wait=False)
+        self.bot.perform(wait=False)
+        self.bot.perform(wait=False)
+        self.bot.perform(wait=False)
+        self.bot.perform(wait=False)
+        self.assertEqual(self.bot.getTotalActions(), 5)
 
 if __name__ == '__main__':
     unittest.main()

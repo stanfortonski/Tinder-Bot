@@ -84,6 +84,5 @@ class TinderLogin:
         except NoSuchElementException:
             pass
        
-
     def isLogged(self):
         return self.__isLogged
