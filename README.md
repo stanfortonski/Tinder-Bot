@@ -2,7 +2,7 @@
 Tinder Bot: Automate your likes and dislikes. Increase match level!
 
 ## Description
-This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. 
+This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. That program can save log with instagram nicks which those are downloaded from Tinder user description.
 
 ## Installation
 1. Install Firefox. Link: https://www.mozilla.org
