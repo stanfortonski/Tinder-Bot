@@ -1,5 +1,5 @@
 # Tinder-Bot 2020
-Tinder Bot: Automate your likes and dislikes. Increase Match level.
+Tinder Bot: Automate your likes and dislikes. Increase match level!
 
 ## Description
 This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. 
