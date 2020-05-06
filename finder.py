@@ -40,7 +40,7 @@ class Finder:
 
     def __saveData(self, fileName, name, age, distance, nickname):
         with open(fileName, 'a') as file:
-            file.write(f'{name} {age} {distance} {nickname}')
+            file.write(f'\n{name} {age} {distance} {nickname}')
 
     def getTotalSaves(self):
         return self.__totalSaves

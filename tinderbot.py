@@ -24,7 +24,7 @@ class TinderBot:
             else:
                 self.dislike()
             if wait:
-                sleep(self.__getWaitTimeInSec())
+                sleep(getWaitTimeInSec())
 
     def __doOutOfLikesPopup(self):
         driver = self.driver
@@ -55,11 +55,6 @@ class TinderBot:
         total = self.getTotalActions()
         return f'=== Tinder results ===\n* Total actions: {total}\n* Total likes: {self.__totalLikes}\n* Total disLikes: {self.__totalDislikes}'
 
-    def __getWaitTimeInSec(self):
-        maxTime = Config['max_wait_time_between_action_in_sec']
-        minTime = Config['min_wait_time_between_action_in_sec']
-        return max(min(random.random() * maxTime, maxTime), minTime)
-
     def getTotalActions(self):
         return self.__totalLikes + self.__totalDislikes
     
@@ -68,3 +63,8 @@ class TinderBot:
 
     def getTotalDislikes(self):
         return self.__totalDislikes
+
+def getWaitTimeInSec():
+    maxTime = Config['max_wait_time_between_action_in_sec']
+    minTime = Config['min_wait_time_between_action_in_sec']
+    return max(min(random.random() * maxTime, maxTime), minTime)
