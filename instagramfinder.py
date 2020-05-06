@@ -1,6 +1,6 @@
 # Author: Stan Fortoński
-# Date: 02.05.2020
-# Tinder Bot
+# Date: 05.05.2020
+# Instagram Finder
 
 import re
 from config import Config

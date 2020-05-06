@@ -17,7 +17,7 @@ class TestTinderBot(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        pass #cls.driver.close()
+        cls.driver.close()
 
     def setUp(self):
         self.bot = TinderBot(self.driver)

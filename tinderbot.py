@@ -2,8 +2,8 @@
 # Date: 02.05.2020
 # Tinder Bot
 
-import random
 import sys
+import random
 from time import sleep
 from config import Config
 from selenium.common.exceptions import NoSuchElementException
@@ -41,8 +41,7 @@ class TinderBot(InstagramFinder):
         while True:
             try:
                 element = self.driver.find_element_by_css_selector('.beacon__circle')
-                sleep(2)
-                print('no_people')
+                sleep(3)
             except NoSuchElementException:
                 break
 
