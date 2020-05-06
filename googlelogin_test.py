@@ -22,6 +22,5 @@ class TestGoogleLogin(unittest.TestCase):
         self.gl.logIn()
         self.assertTrue(self.gl.isLogged())
 
-
 if __name__ == '__main__':
     unittest.main()
