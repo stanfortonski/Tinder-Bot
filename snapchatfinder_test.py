@@ -32,28 +32,27 @@ class TestSnapchatFinder(unittest.TestCase):
                 self.driver.get('https://tinder.com/app/recs')
                 sleep(5)
 
-
     def testSnapSaving(self):
         testFileName = 'snap_test.txt'
         with open(testFileName, 'w') as file:
             file.write('')
 
-        self.changeNameScript('snap _x_test_x_')
+        self.changeNameScript('snap _x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
-        self.changeNameScript('snap: _x_test_x_')
+        self.changeNameScript('snap: _x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
-        self.changeNameScript('snap:_x_test_x_')
+        self.changeNameScript('snap:_x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
-        self.changeNameScript('snapchat _x_test_x_')
+        self.changeNameScript('snapchat _x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
-        self.changeNameScript('snapchat: _x_test_x_')
+        self.changeNameScript('snapchat: _x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
-        self.changeNameScript('snapchat:_x_test_x_')
+        self.changeNameScript('snapchat:_x_te2st_x_')
         self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
 
 if __name__ == '__main__':

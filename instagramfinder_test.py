@@ -22,18 +22,46 @@ class TestIntagramFinder(unittest.TestCase):
     def setUp(self):
         self.insta = InstagramFinder(self.driver)
 
+    def changeNameScript(self, name):
+        while True:
+            try:
+                self.driver.execute_script('document.querySelector("#content > div > div:nth-child(1) > div > main > div:nth-child(1) > div > div > div:nth-child(1) > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(6) > div > div:nth-child(2) > div > div > span").innerHTML = "'+name+'"');
+                break
+            except:
+                self.driver.get('https://tinder.com/app/recs')
+                sleep(5)
+
     def testInstagramSaving(self):
         testFileName = 'ig_test.txt'
         with open(testFileName, 'w') as file:
             file.write('')
 
-        while True:
-            self.driver.get('https://tinder.com/app/recs')
-            sleep(5)
-            result = self.insta.findAndSaveInstagramNick(fileName=testFileName)
-            if result == True:
-                self.assertTrue(True)
-                break
+        self.changeNameScript('ig _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('ig: _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('ig:_x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('insta _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('insta: _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('insta:_x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('instagram _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('instagram: _x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
+
+        self.changeNameScript('instagram:_x_te2st_x_')
+        self.assertTrue(self.insta.findAndSaveInstagramNick(fileName=testFileName))
 
 if __name__ == '__main__':
     unittest.main()
