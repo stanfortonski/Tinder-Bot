@@ -9,7 +9,6 @@ from tinderbot import TinderBot
 from instagramfinder import InstagramFinder
 from snapchatfinder import SnapchatFinder
 from selenium.common.exceptions import NoSuchElementException
-from config import Config
 
 driver = getDriver()
 login = TinderLogin(driver)
@@ -17,20 +16,17 @@ bot = TinderBot(driver)
 igFinder = InstagramFinder(driver)
 snapFinder = SnapchatFinder(driver)
 
+print('=== TinderBot Start ===')
 login.logIn()
 if login.isLogged():
     print('=== Tinder Perform ===')
     while True:
         try:     
             bot.perform()
-            if Config['allow_to_save_ig']:
-                igFinder.findAndSaveInstagramNick()
-            if Config['allow_to_save_snap']:
-                snapFinder.findAndSaveSnapchatNick()
+            igFinder.findAndSaveInstagramNick()
+            snapFinder.findAndSaveSnapchatNick()
             if bot.getTotalActions() % 10 == 0:
-                print(bot)
-                print(igFinder)
-                print(snapFinder)
+                print(bot, igFinder, snapFinder)
         except NoSuchElementException as e:
             print(f'Error: {e}\nReport me: https://github.com/stanfortonski/Tinder-Bot')
             break

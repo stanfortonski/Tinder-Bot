@@ -38,22 +38,22 @@ class TestSnapchatFinder(unittest.TestCase):
             file.write('')
 
         self.changeNameScript('snap _x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
         self.changeNameScript('snap: _x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
         self.changeNameScript('snap:_x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
         self.changeNameScript('snapchat _x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
         self.changeNameScript('snapchat: _x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
         self.changeNameScript('snapchat:_x_te2st_x_')
-        self.assertTrue(self.snap.findAndSaveSnapchatNick(fileName=testFileName))
+        self.assertTrue(self.snap.findAndSaveNick(testFileName))
 
 if __name__ == '__main__':
     unittest.main()
