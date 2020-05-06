@@ -7,11 +7,9 @@ import random
 from time import sleep
 from config import Config
 from selenium.common.exceptions import NoSuchElementException
-from instagramfinder import InstagramFinder
 
-class TinderBot(InstagramFinder):
+class TinderBot:
     def __init__(self, driver):
-        super().__init__(driver)
         self.driver = driver
         self.__totalLikes = 0
         self.__totalDislikes = 0
@@ -55,8 +53,7 @@ class TinderBot(InstagramFinder):
 
     def __str__(self):
         total = self.getTotalActions()
-        insta = super().__str__()
-        return f'=== Tinder results ===\n* Total actions: {total}\n* Total likes: {self.__totalLikes}\n* Total disLikes: {self.__totalDislikes}{insta}'
+        return f'=== Tinder results ===\n* Total actions: {total}\n* Total likes: {self.__totalLikes}\n* Total disLikes: {self.__totalDislikes}'
 
     def __getWaitTimeInSec(self):
         maxTime = Config['max_wait_time_between_action_in_sec']
