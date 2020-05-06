@@ -2,7 +2,7 @@
 Tinder Bot: Automate your likes and dislikes. Increase match level!
 
 ## Description
-This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. That program can save log with instagram nicks which those are downloaded from Tinder user description.
+This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. That program can save log with **Instagram** and **Snapchat** nicks which those are downloaded from Tinder user description.
 
 ## Installation
 1. Install Firefox. Link: https://www.mozilla.org
@@ -42,9 +42,11 @@ In your `config.py` file have to change following things:
 `min_wait_time_between_action_in_sec` for minimal time delay. Default `max_wait_time_between_action_in_sec` is 45 and `min_wait_time_between_action_in_sec` is 10.
 6. Only if you log in through Google. This option `amount_of_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
 7. If you want to save Instagram nick from description set `allow_to_save_ig` to True. Default is True.
-8. Choose path to your file with instagram nicknames so change `ig_file_path`. Default is 'instagram.txt'.
+8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is 'instagram.txt'.
+9. If you want to save Snapchat nick from description set `allow_to_save_snap` to True. Default is True.
+10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is 'snap.txt'.
 
 ## Usage
-Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` 
+Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` or `python3 executable.py`
 
 **Created for scientific purposes only. This is not intended to harm anyone. I am not responsible for any damages resulting from the use of this program.**
