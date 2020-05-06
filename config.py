@@ -19,6 +19,6 @@ Config = {
     'min_wait_time_between_action_in_sec': 10,
     'allow_to_save_ig': True,
     'ig_file_path': 'instagram.txt',
-    'allow_to_save_snap:': True,
+    'allow_to_save_snap': True,
     'snap_file_path': 'snap.txt'
 }
