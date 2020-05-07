@@ -3,9 +3,9 @@
 # Tinder Bot
 
 import sys
-import random
-from time import sleep
+from random import randrange
 from config import Config
+import functions as fn
 from selenium.common.exceptions import NoSuchElementException
 
 class TinderBot:
@@ -17,14 +17,14 @@ class TinderBot:
     def perform(self, wait=True):
         if 'app/recs' in self.driver.current_url:
             self.__doOutOfLikesPopup()
-            waitForPeople(driver)
-            chanceToLike = random.randrange(1, 100)
+            fn.waitForPeople(self.driver)
+            chanceToLike = randrange(1, 100)
             if chanceToLike <= Config['chance_to_like']:
                 self.like()
             else:
                 self.dislike()
             if wait:
-                sleep(getWaitTimeInSec())
+                fn.waitRandomTime()
 
     def __doOutOfLikesPopup(self):
         driver = self.driver
@@ -55,16 +55,3 @@ class TinderBot:
 
     def getTotalDislikes(self):
         return self.__totalDislikes
-
-def getWaitTimeInSec():
-    maxTime = Config['max_wait_time_between_action_in_sec']
-    minTime = Config['min_wait_time_between_action_in_sec']
-    return max(min(random.random() * maxTime, maxTime), minTime)
-
-def waitForPeople(driver):
-    while True:
-        try:
-            element = driver.find_element_by_css_selector('.beacon__circle')
-            sleep(30)
-        except NoSuchElementException:
-            break

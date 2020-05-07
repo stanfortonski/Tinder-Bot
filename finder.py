@@ -14,16 +14,16 @@ class Finder:
     def findAndSaveNick(self, fileName):
         driver = self.driver
         age = ''
-        distance = ''
         try:
             age = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[1]/div/span').get_attribute('innerHTML')
         except NoSuchElementException:
            pass
 
+        distance = ''
         try:
             distance = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[2]/div/div/div/div[2]').get_attribute('innerHTML')
         except NoSuchElementException:
-           pass   
+           pass
 
         try:
             name = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[1]/div/div/span').get_attribute('innerHTML')
@@ -40,7 +40,7 @@ class Finder:
 
     def __saveData(self, fileName, name, age, distance, nickname):
         with open(fileName, 'a') as file:
-            file.write(f'\n{name} {age} {distance} {nickname}')
+            file.write(f'\n{name} {age} | {distance} | {nickname}')
 
     def getTotalSaves(self):
         return self.__totalSaves
