@@ -17,7 +17,7 @@ class TinderBot:
     def perform(self, wait=True):
         if 'app/recs' in self.driver.current_url:
             self.__doOutOfLikesPopup()
-            self.__noPeople()
+            waitForPeople(driver)
             chanceToLike = random.randrange(1, 100)
             if chanceToLike <= Config['chance_to_like']:
                 self.like()
@@ -34,14 +34,6 @@ class TinderBot:
             sys.exit()
         except NoSuchElementException:
             pass
-
-    def __noPeople(self):
-        while True:
-            try:
-                element = self.driver.find_element_by_css_selector('.beacon__circle')
-                sleep(3)
-            except NoSuchElementException:
-                break
 
     def like(self):
         self.__totalLikes += 1
@@ -68,3 +60,11 @@ def getWaitTimeInSec():
     maxTime = Config['max_wait_time_between_action_in_sec']
     minTime = Config['min_wait_time_between_action_in_sec']
     return max(min(random.random() * maxTime, maxTime), minTime)
+
+def waitForPeople(driver):
+    while True:
+        try:
+            element = driver.find_element_by_css_selector('.beacon__circle')
+            sleep(30)
+        except NoSuchElementException:
+            break

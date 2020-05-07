@@ -7,6 +7,7 @@ from time import sleep
 from driver import getDriver
 from tinderlogin import TinderLogin
 from tinderbot import getWaitTimeInSec
+from tinderbot import waitForPeople
 from instagramfinder import InstagramFinder
 from snapchatfinder import SnapchatFinder
 from selenium.common.exceptions import NoSuchElementException
@@ -23,11 +24,12 @@ if login.isLogged():
     while True:
         try:
             driver.get('https://tinder.com/app/recs')
-            sleep(getWaitTimeInSec())
+            waitForPeople(driver)
             igFinder.findAndSaveInstagramNick()
             snapFinder.findAndSaveSnapchatNick()
             if igFinder.getTotalSaves() != 0 and igFinder.getTotalSaves() % 10 == 0:
                 print(igFinder, snapFinder)
+            sleep(getWaitTimeInSec())
         except NoSuchElementException as e:
             print(f'Error: {e}\nReport me: https://github.com/stanfortonski/Tinder-Bot')
             break

@@ -13,7 +13,6 @@ class Finder:
 
     def findAndSaveNick(self, fileName):
         driver = self.driver
-        name = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[1]/div/div/span').get_attribute('innerHTML')
         age = ''
         distance = ''
         try:
@@ -27,6 +26,7 @@ class Finder:
            pass   
 
         try:
+            name = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[1]/div/div/span').get_attribute('innerHTML')
             description = driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[1]/div[3]/div[6]/div/div[2]/div/div/span').get_attribute('innerHTML')
             nick = self.__pattern.search(description.lower())
             if nick is not None:
