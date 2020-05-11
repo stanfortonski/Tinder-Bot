@@ -4,8 +4,8 @@
 
 import sys
 from random import randrange
-from config import Config
-import functions as fn
+from tinder.config import Config
+import tinder.functions as fn
 from selenium.common.exceptions import NoSuchElementException
 
 class TinderBot:

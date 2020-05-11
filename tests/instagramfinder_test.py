@@ -2,11 +2,14 @@
 # Date: 05.05.2020
 # Instagram Finder Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from time import sleep
-from tinderlogin import TinderLogin
-from instagramfinder import InstagramFinder
 from driver import getDriver
+from tinder.config import Config
+from tinder.login.tinderlogin import TinderLogin
+from tinder.finder.instagramfinder import InstagramFinder
+
 
 class TestIntagramFinder(unittest.TestCase):
     @classmethod
@@ -32,7 +35,7 @@ class TestIntagramFinder(unittest.TestCase):
                 sleep(5)
 
     def testInstagramSaving(self):
-        testFileName = 'ig_test.txt'
+        testFileName = Config['ig_file_path']
         with open(testFileName, 'w') as file:
             file.write('')
 

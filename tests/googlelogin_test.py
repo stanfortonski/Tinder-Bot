@@ -2,9 +2,10 @@
 # Date: 02.05.2020
 # Login To Google Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from driver import getDriver
-from googlelogin import GoogleLogin
+from tinder.login.googlelogin import GoogleLogin
 
 class TestGoogleLogin(unittest.TestCase):
     @classmethod

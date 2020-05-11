@@ -1,0 +1,20 @@
+{
+    "google": {
+        "login": "your_google_login",
+        "password": "your_google_password"
+    },
+    "facebook": {
+        "login": "your_facebook_login",
+        "password": "your_facebook_password"
+    },
+    "login_method": "google",
+    "match_message": "",
+    "chance_to_like": 90,
+    "amount_of_attempts": 15,
+    "max_wait_time_between_action_in_sec": 5,
+    "min_wait_time_between_action_in_sec": 4,
+    "allow_to_save_ig": true,
+    "ig_file_path": "instagram.txt",
+    "allow_to_save_snap": true,
+    "snap_file_path": "snap.txt"
+}

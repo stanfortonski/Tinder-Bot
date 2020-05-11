@@ -2,8 +2,8 @@
 # Date: 05.05.2020
 # Instagram Finder
 
-from config import Config
-from finder import Finder
+from tinder.config import Config
+from tinder.finder.finder import Finder
 
 class InstagramFinder(Finder):
     def __init__(self, driver):

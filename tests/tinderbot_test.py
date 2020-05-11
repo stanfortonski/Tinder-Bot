@@ -2,11 +2,12 @@
 # Date: 02.05.2020
 # Tinder Bot Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from time import sleep
-from tinderlogin import TinderLogin
-from tinderbot import TinderBot
 from driver import getDriver
+from tinder.login.tinderlogin import TinderLogin
+from tinder.tinderbot import TinderBot
 
 class TestTinderBot(unittest.TestCase):
     @classmethod

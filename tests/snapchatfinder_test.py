@@ -2,11 +2,13 @@
 # Date: 06.05.2020
 # Snapchat Finder Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from time import sleep
-from tinderlogin import TinderLogin
-from snapchatfinder import SnapchatFinder
 from driver import getDriver
+from tinder.config import Config
+from tinder.login.tinderlogin import TinderLogin
+from tinder.finder.snapchatfinder import SnapchatFinder
 from selenium.common.exceptions import JavascriptException
 
 class TestSnapchatFinder(unittest.TestCase):
@@ -33,7 +35,7 @@ class TestSnapchatFinder(unittest.TestCase):
                 sleep(5)
 
     def testSnapSaving(self):
-        testFileName = 'snap_test.txt'
+        testFileName = Config['snap_file_path']
         with open(testFileName, 'w') as file:
             file.write('')
 

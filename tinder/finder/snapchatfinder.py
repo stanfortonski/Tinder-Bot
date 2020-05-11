@@ -2,8 +2,8 @@
 # Date: 06.05.2020
 # Snapchat Finder
 
-from config import Config
-from finder import Finder
+from tinder.config import Config
+from tinder.finder.finder import Finder
 
 class SnapchatFinder(Finder):
     def __init__(self, driver):

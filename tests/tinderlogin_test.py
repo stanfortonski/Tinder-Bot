@@ -2,9 +2,10 @@
 # Date: 02.05.2020
 # Login To Tinder Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from driver import getDriver
-from tinderlogin import TinderLogin
+from tinder.login.tinderlogin import TinderLogin
 
 class TestTinderLogin(unittest.TestCase):
     def setUp(self):

@@ -4,7 +4,7 @@
 
 from time import sleep
 from selenium.webdriver.common.keys import Keys
-from config import Config
+from tinder.config import Config
 
 class GoogleLogin:
     def __init__(self, driver):

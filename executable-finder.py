@@ -3,10 +3,10 @@
 # Proper Executable
 
 from driver import getDriver
-from tinderlogin import TinderLogin
-import functions as fn
-from instagramfinder import InstagramFinder
-from snapchatfinder import SnapchatFinder
+from tinder.login.tinderlogin import TinderLogin
+import tinder.functions as fn
+from tinder.finder.instagramfinder import InstagramFinder
+from tinder.finder.snapchatfinder import SnapchatFinder
 from selenium.common.exceptions import NoSuchElementException
 
 driver = getDriver()

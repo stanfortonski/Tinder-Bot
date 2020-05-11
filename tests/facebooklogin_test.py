@@ -2,9 +2,10 @@
 # Date: 02.05.2020
 # Login To Facebook Test
 
-import unittest
+import sys, unittest
+sys.path.insert(0, '..')
 from driver import getDriver
-from facebooklogin import FacebookLogin
+from tinder.login.facebooklogin import FacebookLogin
 
 class TestFacebookLogin(unittest.TestCase):
     @classmethod

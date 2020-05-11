@@ -4,10 +4,10 @@
 
 from random import random
 from driver import getDriver
-from tinderlogin import TinderLogin
-from tinderbot import TinderBot
-from instagramfinder import InstagramFinder
-from snapchatfinder import SnapchatFinder
+from tinder.login.tinderlogin import TinderLogin
+from tinder.tinderbot import TinderBot
+from tinder.finder.instagramfinder import InstagramFinder
+from tinder.finder.snapchatfinder import SnapchatFinder
 from selenium.common.exceptions import NoSuchElementException
 
 driver = getDriver()

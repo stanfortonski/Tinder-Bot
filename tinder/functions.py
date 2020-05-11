@@ -4,7 +4,7 @@
 
 from random import random
 from time import sleep
-from config import Config
+from tinder.config import Config
 from selenium.common.exceptions import NoSuchElementException
 
 def waitRandomTime():
@@ -17,6 +17,5 @@ def waitForPeople(driver):
         try:
             element = driver.find_element_by_css_selector('.beacon__circle')
             sleep(20)
-            print('test!')
         except NoSuchElementException:
             break

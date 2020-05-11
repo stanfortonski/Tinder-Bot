@@ -3,7 +3,7 @@
 # Login To Facebook
 
 from time import sleep
-from config import Config
+from tinder.config import Config
 from selenium.common.exceptions import NoSuchElementException
 
 class FacebookLogin:

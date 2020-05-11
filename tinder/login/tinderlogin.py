@@ -3,9 +3,9 @@
 # Login To Tinder
 
 from time import sleep
-from config import Config
-from googlelogin import GoogleLogin
-from facebooklogin import FacebookLogin
+from tinder.config import Config
+from tinder.login.googlelogin import GoogleLogin
+from tinder.login.facebooklogin import FacebookLogin
 from selenium.common.exceptions import NoSuchElementException
 
 class TinderLogin:
