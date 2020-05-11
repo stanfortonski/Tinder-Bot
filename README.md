@@ -13,7 +13,7 @@ This bot will help you automate giving likes and dislikes. The bot will also lik
 pip install selenium
 ```
 5. Download driver for your Firefox version. Link: https://github.com/mozilla/geckodriver/releases and put it to source files.
-5. Open and edit `config.py`.
+5. Open and edit `config.json`.
 
 ## Configuration
 In your `config.py` file have to change following things:
@@ -21,16 +21,16 @@ In your `config.py` file have to change following things:
 - To login via Google set `'login_method': 'google'`
 - To login via Facebook set `'login_method': 'facebook'`
 2. Set your password to Facebook account or Google account.
-```python
+```json
 #...
-'google': {
-  'login': 'your_google_login',
-  'password': 'your_google_password'
+"google": {
+  "login": "your_google_login",
+  "password": "your_google_password"
 },
-'facebook': {
-  'login': 'your_facebook_login',
-  'password': 'your_facebook_password'
-},
+"facebook": {
+  "login": "your_facebook_login",
+  "password": "your_facebook_password"
+}
 #...
 ```
 3. To send message after match set your `match_message`. If `match_message` is empty it won't send message. Not implemented yet.
@@ -41,10 +41,10 @@ In your `config.py` file have to change following things:
 5. To set wait time between give next like or dislike you have to change `max_wait_time_between_action_in_sec` for maximal time delay and 
 `min_wait_time_between_action_in_sec` for minimal time delay. Default `max_wait_time_between_action_in_sec` is 45 and `min_wait_time_between_action_in_sec` is 10.
 6. Only if you log in through Google. This option `amount_of_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
-7. If you want to save Instagram nick from description set `allow_to_save_ig` to True. Default is True.
-8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is 'instagram.txt'.
-9. If you want to save Snapchat nick from description set `allow_to_save_snap` to True. Default is True.
-10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is 'snap.txt'.
+7. If you want to save Instagram nick from description set `allow_to_save_ig` to true. Default is true.
+8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is "instagram.txt".
+9. If you want to save Snapchat nick from description set `allow_to_save_snap` to True. Default is true.
+10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is "snap.txt".
 
 ## Usage
 Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` or `python3 executable.py`. If you want find only Instagram/Snapchat nicknames you will call: `python executable-finder.py` or `python3 executable-finder.py`
