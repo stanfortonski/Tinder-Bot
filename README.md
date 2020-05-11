@@ -18,8 +18,8 @@ pip install selenium
 ## Configuration
 In your `config.py` file have to change following things:
 1. Change your login method. You can login via Facebook or Google.
-- To login via Google set `'login_method': 'google'`
-- To login via Facebook set `'login_method': 'facebook'`
+- To login via Google set `"login_method": "google"`
+- To login via Facebook set `"login_method": "facebook"`
 2. Set your password to Facebook account or Google account.
 ```json
 #...
