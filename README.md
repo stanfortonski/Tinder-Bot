@@ -40,7 +40,8 @@ In your `config.py` file have to change following things:
 - Default is 90.
 5. To set wait time between give next like or dislike you have to change `max_wait_time_between_action_in_sec` for maximal time delay and 
 `min_wait_time_between_action_in_sec` for minimal time delay. Default `max_wait_time_between_action_in_sec` is 45 and `min_wait_time_between_action_in_sec` is 10.
-6. Only if you log in through Google. This option `amount_of_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
+6. Only if you log in through Google. This option `amount_of_login_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
+6. This option `amount_of_avoid_errors` sets the number of attempts that after program will show error message and exit. Default is 5.
 7. If you want to save Instagram nick from description set `allow_to_save_ig` to true. Default is true.
 8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is "instagram.txt".
 9. If you want to save Snapchat nick from description set `allow_to_save_snap` to True. Default is true.
