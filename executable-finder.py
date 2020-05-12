@@ -1,6 +1,6 @@
 # Author: Stan Fortoński
-# Date: 02.05.2020
-# Proper Executable
+# Date: 06.05.2020
+# IG/Snap Finder Executable
 
 from driver import getDriver
 from tinder.login.tinderlogin import TinderLogin

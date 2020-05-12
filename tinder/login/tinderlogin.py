@@ -39,7 +39,7 @@ class TinderLogin:
     def __logInViaGoogle(self):
         driver = self.driver
         works = False
-        for i in range(0, Config['amount_of_attempts']):
+        for i in range(0, Config['amount_of_login_attempts']):
             try:
                 driver.find_element_by_css_selector('header > div button').click()
                 sleep(1)
