@@ -19,7 +19,7 @@ class FacebookLogin:
         driver.get('https://www.facebook.com/')
         driver.find_element_by_xpath('//*[@id="email"]').send_keys(self.login)
         driver.find_element_by_xpath('//*[@id="pass"]').send_keys(self.password)
-        driver.find_element_by_xpath('//*[@id="u_0_b"]').submit()
+        driver.find_element_by_xpath('//*[@id="u_0_d"]').submit()
         sleep(6)
         try:
             element = driver.find_element_by_css_selector('input[type="search"]')

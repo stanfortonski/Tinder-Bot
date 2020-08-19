@@ -7,7 +7,7 @@
         "login": "your_facebook_login",
         "password": "your_facebook_password"
     },
-    "login_method": "google",
+    "login_method": "facebook",
     "match_message": "",
     "chance_to_like": 90,
     "amount_of_login_attempts": 15,
