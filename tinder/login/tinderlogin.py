@@ -61,12 +61,12 @@ class TinderLogin:
         driver = self.driver
         driver.find_element_by_css_selector('header > div button').click()
         sleep(1)
-        button = driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[3]/span/div[2]/button')
+        button = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/div/div[3]/span/div[2]/button')
         if 'Facebook' in button.get_attribute('innerHTML'):
             button.click()
         else:
             driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[3]/span/button').click()
-            sleep(0.5)
+            sleep(1)
             driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div/div[3]/span/div[3]/button').click()
             
     def __closePopups(self):
