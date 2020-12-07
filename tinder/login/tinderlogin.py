@@ -26,7 +26,12 @@ class TinderLogin:
         if self.methodLogin.isLogged:
             print('=== Tinder login ===')
             driver.get('https://tinder.com/')
+            sleep(2)
+            self.chooseLang()
             sleep(1)
+            driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div/div/header/div/div[2]/div[2]/button').click()
+            sleep(1)
+
             if self.type == 'google':
                 self.__logInViaGoogle()
             else:
@@ -41,8 +46,6 @@ class TinderLogin:
         works = False
         for i in range(0, Config['amount_of_login_attempts']):
             try:
-                driver.find_element_by_css_selector('header > div button').click()
-                sleep(1)
                 button = driver.find_element_by_css_selector('button[aria-label~="Google"]')
                 button.click()
                 works = True
@@ -59,8 +62,6 @@ class TinderLogin:
 
     def __logInViaFacebook(self):
         driver = self.driver
-        driver.find_element_by_css_selector('header > div button').click()
-        sleep(1)
         button = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/div/div[3]/span/div[2]/button')
         if 'Facebook' in button.get_attribute('innerHTML'):
             button.click()
@@ -86,3 +87,9 @@ class TinderLogin:
        
     def isLogged(self):
         return self.__isLogged
+
+    def chooseLang(self):
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/ul/li[1]/button').click()
+        except NoSuchElementException:
+            pass
