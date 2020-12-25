@@ -22,8 +22,9 @@ class FacebookLogin:
         driver.get('https://www.facebook.com/')
         try:
             element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, '[data-testid="cookie-policy-banner-accept"]'))) 
-        finally:
             element.click()
+        except:
+            pass
 
         driver.find_element_by_xpath('//*[@id="email"]').send_keys(self.login)
         driver.find_element_by_xpath('//*[@id="pass"]').send_keys(self.password)
