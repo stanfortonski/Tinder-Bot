@@ -18,7 +18,7 @@ pip install selenium
 ## Configuration
 In your `config.json` file have to change following things:
 1. Change your login method. You can login via Facebook or Google.
-- To login via Google set `"login_method": "google"`. That doesn't work at this moment!
+- To login via Google set `"login_method": "google"`. That doesn't work at this moment! Probably this method will be delete in future.
 - To login via Facebook set `"login_method": "facebook"`
 2. Set your password to Facebook account or Google account.
 ```json
@@ -47,6 +47,6 @@ In your `config.json` file have to change following things:
 10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is "snap.txt".
 
 ## Usage
-Open your terminal/CMD in Tinder-Bot directory and call: `python executable.py` or `python3 executable.py`. If you want find only Instagram/Snapchat nicknames you will call: `python executable-finder.py` or `python3 executable-finder.py`
+Open your terminal/CMD in Tinder-Bot directory and call: `python app.py` or `python3 app.py`. If you want find only Instagram/Snapchat nicknames you will call: `python app-finder.py` or `python3 app-finder.py`
 
 **Created for scientific purposes only. This is not intended to harm anyone. I am not responsible for any damages resulting from the use of this program.**
