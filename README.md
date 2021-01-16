@@ -1,4 +1,4 @@
-# Tinder-Bot 2020
+# Tinder-Bot 2021
 Tinder Bot: Automate your likes and dislikes. Increase match level!
 
 ## Description
