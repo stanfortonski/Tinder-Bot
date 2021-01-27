@@ -1,5 +1,8 @@
 # Tinder-Bot 2021
-Tinder Bot: Automate your likes and dislikes. Increase match level!
+Tinder Bot: Automate your likes and dislikes. Increase match level! Totaly free and safe.
+
+**DOWNLOAD HERE: https://github.com/stanfortonski/Tinder-Bot/releases/tag/v1.6.4**
+
 
 ## Description
 This bot will help you automate giving likes and dislikes. The bot will also likely increase your matcha amount. It gives like/dislike depending on the chance given in the config in percent on like. You can set how much you want from 0 to 100 percent. It works randomly, the bot does not rate photos. That program can save log with **Instagram** and **Snapchat** nicks which those are downloaded from Tinder user description.
