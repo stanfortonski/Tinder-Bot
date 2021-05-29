@@ -18,7 +18,7 @@ class TinderLogin:
         elif type == 'facebook':
             self.methodLogin = FacebookLogin(driver)
         else:
-            raise RuntimeError('Undefined or unrecognized login method to Tinder')
+            raise RuntimeError('Undefined or unrecognized login method to Tinder.')
 
     def logIn(self):
         driver = self.driver
@@ -33,7 +33,7 @@ class TinderLogin:
                     sleep(2)
                     self.chooseLang()
                     sleep(2)
-                    driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div/div/header/div/div[2]/div[2]/button').click()
+                    driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div/div/header/div/div[2]/div[2]/a').click()
                     sleep(2)
                     if self.type == 'google':
                         self.__logInViaGoogle()
