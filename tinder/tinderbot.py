@@ -38,23 +38,44 @@ class TinderBot:
             pass
 
     def like(self):
-        try:
-            self.driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[4]/button').click()
-            self.__totalLikes += 1
-        except ElementClickInterceptedException:
+        success = None
+        likesButtons = ['/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button', '/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[5]/div/div[4]/button']
+        for button in likesButtons:
+            try:                                    
+                self.driver.find_element_by_xpath(button).click()
+                self.__totalLikes += 1
+                success = True
+                break
+            except (ElementClickInterceptedException, NoSuchElementException):
+                continue
+
+        if not success:
             self.solveProblems()
             sleep(2)
             
     def dislike(self):
-        try:
-            self.driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/div[2]/button').click()
-            self.__totalDislikes += 1
-        except ElementClickInterceptedException:
+        success = None
+        dislikesButtons = ['/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[2]/button', '/html/body/div[1]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[5]/div/div[2]/button']
+        for button in dislikesButtons:
+            try:                                    
+                self.driver.find_element_by_xpath(button).click()
+                self.__totalDislikes += 1
+                success = True
+                break
+            except (ElementClickInterceptedException, NoSuchElementException):
+                continue
+        
+        if not success:
             self.solveProblems()
             sleep(2)
 
     def solveProblems(self):
         try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div[3]/button[2]').click()
+        except NoSuchElementException:
+            pass
+
+        try:                                    
             self.driver.find_element_by_xpath('/html/body/div[2]/div/div/button[2]').click()
         except NoSuchElementException:
             pass
@@ -63,8 +84,7 @@ class TinderBot:
             self.driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[2]/div/div/div[1]/div/div[4]/button').click()
         except NoSuchElementException:
             pass
-        
-
+           
     def __str__(self):
         total = self.getTotalActions()
         return f'=== Tinder results ===\n* Total actions: {total}\n* Total likes: {self.__totalLikes}\n* Total disLikes: {self.__totalDislikes}'

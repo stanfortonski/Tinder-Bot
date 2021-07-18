@@ -11,9 +11,9 @@ This bot will help you automate giving likes and dislikes. The bot will also lik
 1. Install Firefox. Link: https://www.mozilla.org
 2. Install Python environment. Link: https://www.python.org
 3. Add Python path to your system environment variables. 
-4. Install Selenium for Python. Link: https://selenium-python.readthedocs.io/installation.html
+4. Install Libraries (when you are in unpacked app folder)
 ```
-pip install selenium
+pip install -r requirements.txt
 ```
 5. Download driver for your Firefox version. Link: https://github.com/mozilla/geckodriver/releases and put it to source files.
 5. Open and edit `config.json`.
@@ -45,9 +45,9 @@ In your `config.json` file have to change following things:
 5. This option `amount_of_login_attempts` sets the number of attempts after which if you don't log in It will error occurs. Default is 15.
 6. This option `amount_of_avoid_errors` sets the number of attempts that after program will show error message and exit. Default is 5.
 7. If you want to save Instagram nick from description set `allow_to_save_ig` to true. Default is true.
-8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is "instagram.txt".
+8. Choose path to your file with Instagram nicknames so change `ig_file_path`. Default is "logs/instagram.txt".
 9. If you want to save Snapchat nick from description set `allow_to_save_snap` to True. Default is true.
-10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is "snap.txt".
+10. Choose path to your file with Snapchat nicknames so change `snap_file_path`. Default is "logs/snap.txt".
 
 ## Usage
 Open your terminal/CMD in Tinder-Bot directory and call: `python app.py` or `python3 app.py`. If you want find only Instagram/Snapchat nicknames you will call: `python app-finder.py` or `python3 app-finder.py`

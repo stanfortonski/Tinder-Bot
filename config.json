@@ -14,7 +14,7 @@
     "max_wait_time_between_action_in_sec": 10,
     "min_wait_time_between_action_in_sec": 4,
     "allow_to_save_ig": true,
-    "ig_file_path": "instagram.txt",
+    "ig_file_path": "logs/instagram.txt",
     "allow_to_save_snap": true,
-    "snap_file_path": "snap.txt"
+    "snap_file_path": "logs/snap.txt"
 }
