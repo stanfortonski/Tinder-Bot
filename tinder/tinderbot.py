@@ -18,14 +18,18 @@ class TinderBot:
 
     def perform(self, wait=True):
         if 'app/recs' in self.driver.current_url:
-            self.__doOutOfLikesPopup()
-            fn.waitForPeople(self.driver)
-            chanceToLike = randrange(1, 100)
-            if chanceToLike <= Config['chance_to_like']:
-                self.like()
-            else:
-                self.dislike()
-            if wait:
+            try:
+                self.__doOutOfLikesPopup()
+                fn.waitForPeople(self.driver)
+                chanceToLike = randrange(1, 100)
+                if chanceToLike <= Config['chance_to_like']:
+                    self.like()
+                else:
+                    self.dislike()
+                if wait:
+                    fn.waitRandomTime()
+            except:
+                self.driver.get('https://tinder.com/app/recs')
                 fn.waitRandomTime()
 
     def __doOutOfLikesPopup(self):
@@ -72,17 +76,17 @@ class TinderBot:
     def solveProblems(self):
         try:
             self.driver.find_element_by_xpath('/html/body/div[2]/div/div/div/div[3]/button[2]').click()
-        except NoSuchElementException:
+        except (ElementClickInterceptedException, NoSuchElementException):
             pass
 
         try:                                    
             self.driver.find_element_by_xpath('/html/body/div[2]/div/div/button[2]').click()
-        except NoSuchElementException:
+        except (ElementClickInterceptedException, NoSuchElementException):
             pass
 
         try:
             self.driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div/main/div[2]/div/div/div[1]/div/div[4]/button').click()
-        except NoSuchElementException:
+        except (ElementClickInterceptedException, NoSuchElementException):
             pass
            
     def __str__(self):
