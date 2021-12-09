@@ -1,7 +1,7 @@
 # Tinder-Bot 2021
 Tinder Bot: Automate your likes and dislikes. Increase match level! Totaly free and safe.
 
-**DOWNLOAD HERE: https://github.com/stanfortonski/Tinder-Bot/releases/tag/v1.6.4**
+**DOWNLOAD HERE: https://github.com/stanfortonski/Tinder-Bot/releases/tag/v1.7.1**
 
 
 ## Description
