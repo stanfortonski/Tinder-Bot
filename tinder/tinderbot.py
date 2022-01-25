@@ -28,16 +28,19 @@ class TinderBot:
                     self.dislike()
                 if wait:
                     fn.waitRandomTime()
-            except:
+            except SystemExit:
+                raise
+            except Exception:
                 self.driver.get('https://tinder.com/app/recs')
                 fn.waitRandomTime()
 
     def __doOutOfLikesPopup(self):
         driver = self.driver
         try:
-            driver.find_element_by_xpath('/html/body/div[2]/div/div/div[1]/div[2]/div[1]/div/div[1]/div/div/span/div/div/div[1]/div')
+            xpath_out_of_likes = '/html/body/div[2]/div/div/div[1]/div[2]/div[1]/span[1]/div/div/span/div/h3'
+            driver.find_element_by_xpath(xpath_out_of_likes)
             print('Sorry, you do not have any likes for now. Try later.')
-            sys.exit()
+            sys.exit(1)
         except NoSuchElementException:
             pass
 
